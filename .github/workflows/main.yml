@@ -1,1 +1,23 @@
 
+
+name: Build Project
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show project files
+        run: |
+          echo "Repository files:"
+          ls -la
+          echo "Workflow started successfully"
